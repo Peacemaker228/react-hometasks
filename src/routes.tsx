@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { HomeWork1 } from "./pages/HomeWork1/HomeWork1";
 import { HomeWork2 } from "./pages/HomeWork2/HomeWork2";
+import { HomeWork1Second } from "./pages/HomeWork1_second/HomeWork1Second";
 
 interface IRoute {
   title: string;
@@ -12,6 +13,10 @@ export const routesConfig: Record<string, IRoute> = {
   ["/homework1"]: {
     title: "Домашнее задание №1",
     element: <HomeWork1 />,
+  },
+  ["/homework1-second"]: {
+    title: "Домашнее задание №1 (second)",
+    element: <HomeWork1Second />,
   },
   ["/homework2"]: {
     title: "Домашнее задание №2",
