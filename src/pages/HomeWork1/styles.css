@@ -1,11 +1,3 @@
-/* @keyframes rotate {
-  from {
-    transform: rotateY(0) rotateX(0);
-  }
-  to {
-    transform: rotateY(120deg) rotateX(150deg);
-  }
-} */
 .roll {
   display: flex;
   flex-direction: column;
@@ -29,8 +21,7 @@
   height: 300px;
   position: relative;
   transform-style: preserve-3d;
-
-  /* transition: transform 2s; */
+  transition: transform 1s;
 }
 
 .side {

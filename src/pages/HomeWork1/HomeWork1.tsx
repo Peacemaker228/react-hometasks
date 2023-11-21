@@ -1,33 +1,7 @@
 import { useState } from "react";
 import "./styles.css";
 
-// testRef.current
-//   ?.animate(
-//     [
-//       { transform: `rotateY(0) rotateX(0) rotateZ(0)` },
-//       {
-//         transform: `rotateY(${roll * 20}deg) rotateX(${
-//           roll * 20
-//         }deg) rotateZ(0)`,
-//       },
-//     ],
-//     {
-//       duration: 100,
-//     }
-//   )
-//   .play();
-
-// useEffect(() => {
-//   if (testRef.current) {
-//     // testRef.current.style.transform = `rotateY(${roll * 50}deg) rotateX(${
-//     //   roll * 30
-//     // }deg)`;
-//     // testRef.current.style.transition = "transform 2s";
-//   }
-// }, [roll]);
-// const testRef = useRef<HTMLDivElement | null>(null);
-
-const sides = new Map([
+const SIDES = new Map([
   [1, { x: 0, y: 0 }],
   [2, { x: 90, y: 180 }],
   [3, { x: 0, y: 90 }],
@@ -54,10 +28,9 @@ export const HomeWork1 = () => {
         // ref={testRef}
         className="cube"
         style={{
-          transform: `rotateY(${sides.get(roll)?.y}deg) rotateX(${
-            sides.get(roll)?.x
+          transform: `rotateY(${SIDES.get(roll)?.y}deg) rotateX(${
+            SIDES.get(roll)?.x
           }deg)`,
-          transition: "transform 1s",
         }}
       >
         <div className="side one"></div>
