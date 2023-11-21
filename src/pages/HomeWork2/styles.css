@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+  overflow-y: scroll;
+  height: 90vh;
+  margin-top: 16px;
+  padding-right: 16px;
+}
+
+.progress__container {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  height: 12px;
+  background: black;
+  border-radius: 10px;
+}
+
+.progress__bar {
+  background: #86c9f8;
+  transition: transform 0.5s;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.content__container {
+  height: 10000px;
+  margin-top: 32px;
+}
