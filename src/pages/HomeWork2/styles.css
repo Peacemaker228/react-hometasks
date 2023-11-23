@@ -13,6 +13,7 @@
   height: 12px;
   background: black;
   border-radius: 10px;
+  position: sticky;
 }
 
 .progress__bar {

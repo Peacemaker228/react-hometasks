@@ -16,17 +16,22 @@ export const HomeWork2 = () => {
   };
 
   useEffect(() => {
-    node.current?.addEventListener("scroll", onScroll);
-
+    let value: HTMLDivElement | null = null;
+    if (node.current) {
+      node.current.addEventListener("scroll", onScroll);
+      value = node.current;
+    }
     return () => {
-      node.current?.addEventListener("scroll", onScroll);
+      if (value) {
+        value.removeEventListener("scroll", onScroll);
+      }
     };
   }, []);
 
   return (
-    <div id="scroll" ref={node} className="wrapper">
-      <div style={{ position: "sticky" }} className="progress__container">
-        <div style={{ width: scroll + "%" }} className="progress__bar" />
+    <div ref={node} className="wrapper">
+      <div className="progress__container">
+        <div style={{ width: `${scroll}%` }} className="progress__bar" />
       </div>
       <div className="content__container">
         <p>
