@@ -1,6 +1,6 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
-import { routes, routesConfig } from "./routes";
-import { Layout } from "./components/Layout/Layout";
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { routes, routesConfig } from './routes';
+import { Layout } from './components/Layout/Layout';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             />
           ))}
           {routes.length && (
-            <Route path={"*"} element={routesConfig[routes[0]].element} />
+            <Route path={'*'} element={routesConfig[routes[0]].element} />
           )}
         </Routes>
       </Layout>

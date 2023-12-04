@@ -3,8 +3,8 @@
   height: 20px;
   border-top: 3px solid #fff;
   border-right: 3px solid #fff;
-  /* margin-right: 60px; */
-  transform: rotate(-45deg);
+  transform: translateY(50%) rotate(-45deg);
+  margin-left: 12px;
 }
 
 .btn {
@@ -12,4 +12,8 @@
   background: none;
   border: none;
   outline: none;
+}
+
+.up {
+  transform: rotate(135deg);
 }

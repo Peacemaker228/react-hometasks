@@ -1,19 +1,21 @@
-import { FC } from "react";
-import { SortArrow } from "../SortArrow/SortArrow";
-import { tableHeaderData } from "../_mocks";
-import { RowType } from "../types";
-import cls from "./styles.module.css";
+import { FC } from 'react';
+import { SortArrow } from '../SortArrow/SortArrow';
+import { tableHeaderData } from '../_mocks';
+import { RowType } from '../types';
+import cls from './styles.module.css';
 
 interface SortableTableProps {
   rows: RowType[];
   onClick: (el: string) => void;
   isSortedUp: boolean;
+  field: string;
 }
 
 export const SortableTable: FC<SortableTableProps> = ({
   rows,
   onClick,
   isSortedUp,
+  field,
 }) => {
   return (
     <table className={cls.table}>
@@ -22,7 +24,10 @@ export const SortableTable: FC<SortableTableProps> = ({
           {tableHeaderData.map((el, index) => (
             <th className={cls.headRowElement} key={el + index}>
               {el}
-              <SortArrow isSortedUp={isSortedUp} onClick={() => onClick(el)} />
+              <SortArrow
+                isSortedUp={isSortedUp && el === field}
+                onClick={() => onClick(el)}
+              />
             </th>
           ))}
         </tr>

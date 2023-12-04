@@ -1,5 +1,5 @@
-import { FC } from "react";
-import cls from "./sort-arrow.module.css";
+import { FC } from 'react';
+import cls from './styles.module.css';
 
 interface SortArrowProps {
   onClick: () => void;
@@ -7,12 +7,11 @@ interface SortArrowProps {
 }
 export const SortArrow: FC<SortArrowProps> = ({ onClick, isSortedUp }) => {
   return (
-    <button type="button" className={cls.btn}>
+    <button type='button' className={cls.btn}>
       <div
-        className={cls.arrow}
-        style={{ transform: !isSortedUp ? "rotate(0)" : "" }}
+        className={`${cls.arrow} ${isSortedUp && cls.up}`}
         onClick={onClick}
-      ></div>
+      />
     </button>
   );
 };
