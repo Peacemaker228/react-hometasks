@@ -29,7 +29,7 @@ export const routesConfig: Record<string, IRoute> = {
     element: <HomeWork3 />,
   },
   "/homework4": {
-    title: "Домашнее задание №",
+    title: "Домашнее задание №4",
     element: <HomeWork4 />,
   },
 };
