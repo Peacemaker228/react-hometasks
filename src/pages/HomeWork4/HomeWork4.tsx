@@ -22,9 +22,17 @@ export const HomeWork4 = () => {
       <button
         ref={customRef}
         onClick={handleClick}
-        style={{ transition: "background-color 0.2s ease-in-out" }}
+        style={{
+          transition: "background-color 0.2s ease-in-out",
+          border: "none",
+          borderRadius: "8px",
+          padding: "12px",
+          width: 300,
+          margin: "48px auto 0",
+          display: "block",
+        }}
       >
-        Click me!!!!!!
+        Поменяй мне цвет, если посмеешь!
       </button>
     </div>
   );
