@@ -1,0 +1,19 @@
+.headRow {
+  background: #337ab7;
+}
+
+.headRowElement {
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.headRowElement:first-of-type,
+.headRowElement:nth-of-type(2) {
+  width: 15%;
+}
+
+.table {
+  margin-top: 48px;
+  width: 100%;
+}
