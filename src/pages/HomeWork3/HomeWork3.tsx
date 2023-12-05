@@ -1,9 +1,9 @@
-import { useCallback, useMemo, useState } from 'react';
-import { SortableTable } from './SortableTable/SortableTable';
-import { tableData } from './_mocks';
+import { useMemo, useState } from "react";
+import { SortableTable } from "./SortableTable/SortableTable";
+import { tableData } from "./_mocks";
 
 export const HomeWork3 = () => {
-  const [field, setField] = useState('userId');
+  const [field, setField] = useState("userId");
   const [isSortedUp, setIsSortedUp] = useState(false);
 
   const handleSortField = (key: string) => {
@@ -20,20 +20,20 @@ export const HomeWork3 = () => {
     return tableData.sort((a, b) =>
       a[field].toString().localeCompare(b[field].toString(), undefined, {
         numeric: true,
-      }),
+      })
     );
   }, [field, isSortedUp]);
 
-  const getSorted = useCallback(() => {
+  const getSorted = useMemo(() => {
     return isSortedUp ? sortFoo : sortFoo.reverse();
-  }, [sortFoo, isSortedUp]);
+  }, [isSortedUp, sortFoo]);
 
   return (
     <div>
       <SortableTable
         field={field}
         isSortedUp={isSortedUp}
-        rows={getSorted()}
+        rows={getSorted}
         onClick={handleSortField}
       />
     </div>
