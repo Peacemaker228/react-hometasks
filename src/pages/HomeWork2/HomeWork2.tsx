@@ -6,21 +6,23 @@ export const HomeWork2 = () => {
 
   const [scroll, setScroll] = useState(0);
 
-  const onScroll = () => {
-    if (node.current) {
-      const currentProgress = node.current.scrollTop;
-      const scrollHeight =
-        node.current.scrollHeight - node.current.offsetHeight;
-      setScroll((currentProgress / scrollHeight) * 100);
-    }
-  };
-
   useEffect(() => {
+    const onScroll = () => {
+      if (node.current) {
+        const currentProgress = node.current.scrollTop;
+        const scrollHeight =
+          node.current.scrollHeight - node.current.offsetHeight;
+        setScroll((currentProgress / scrollHeight) * 100);
+      }
+    };
+
     let value: HTMLDivElement | null = null;
+
     if (node.current) {
       node.current.addEventListener("scroll", onScroll);
       value = node.current;
     }
+
     return () => {
       if (value) {
         value.removeEventListener("scroll", onScroll);
